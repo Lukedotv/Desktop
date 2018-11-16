@@ -1,0 +1,114 @@
+if a page isn't loading: ipconfig /flushdns
+
+useful kibana search strings
+
+"NB/0190732" AND "dto.toString:ProcessStartCaseworking businessKey [null]," AND "ipfVerticalName"
+
+grep -Hrn 'FEATURE_CREATE_FAILED_MESSAGE_HELPER_ENABLED' ./
+
+ls -la
+
+psql -h iptmighelpdb-dazo-iptcwidev3.service.np.iptho.co.uk -p 5432 -U ipt_mig_help_user iptmighelp –W
+
+password is *uleef8Ti*
+
+
+kubectl -n iptcwidev3 exec -it ipt-mighelp-svc-kd-d696b744b-ccc52 sh
+
+java -jar jenkins-jobs-runner.jar -c=https://cw-mansit-jenkins-dtzo-kops1.service.ops.iptho.co.uk/job/manualsit2-test-atlas/ -u=<user> -p=*** -v=“ManualSIT2 Dashboard” -t parallel -tt=ALL
+
+Parameters
+
+    -c or --url - Jenkins URL
+    -u or --user - Jenkins username
+    -p or --password - Jenkins password
+    -v or --view - Jenkins build monitor view name
+    -t or --type - Run tests in parallel or sequential
+    -tt or --testtype - Allowed values IA, ASYS or ALL
+
+
+java -jar jenkins-jobs-runner.jar -c=https://cwdev-jenkins-dtzo-kops1.service.ops.iptho.co.uk -u= -p= -v=“IptCwiDev3 Dashboard - Regression” -t parallel -tt=ALL
+
+
+java -jar jenkins-jobs-runner.jar -c=https://cwdev-jenkins-dtzo-kops1.service.ops.iptho.co.uk -u="vincentl" -p="Dukes|Bistro7Farina" -v=“IptCwiDev3 Dashboard - Regression” -t parallel -tt=ALL
+
+IPT-DEPLOYMENT
+ipt-envconfig-ccw
+ipt-envconfig-as
+
+context np2 to change context (config file) in kubectl/ kube.helper
+
+
+
+
+
+
+
+
+copy from webapps to temp folder
+ cp ./webapps/ipt-ms-accommodation.war  ./temp/
+ 
+ exctract war.
+
+jar -xfv ./ipt-ms-accommodation.war
+
+
+
+
+copy to local
+
+
+
+cp iptcwidev3/ipt-serdelview-svc-kd-569bbb8b7b-5nkz6:/opt/tomcat/gc.log /tmp
+
+cp iptcwidev3/ipt-acc-svc-kd-6bd9c4d8b5-8mlhz:/opt/tomcat/webapps/ipt-ms-accommodation.war /tmp
+
+kubectl cp iptcwidev3/ipt-acc-svc-kd-6bd9c4d8b5-8mlhz:/opt/tomcat/webapps/ipt-ms-accommodation.war /tmp
+
+
+https://ipt-reldash-dtzo-kops1.service.ops.iptho.co.uk/ipt-deployment-dashboard/#
+then autosit prod delta for tags with jira tickets.
+
+
+ipt-datplat-pers-svc-kd-98854ccf9-8ks4c // csdp
+curl -k -vvv https://localhost/dataplatform-personservice/person/0860123c-5fbb-4fb9-a908-1a05d7e40d62/biographics
+for biographics info
+
+update CSDP via identity vertical
+
+
+desc podname for really useful info.
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: WI :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+update DOB
+
+Work Instructions:
+
+
+
+Step 1:
+
+GET Identity response:
+
+Execute below command on ipt-idntmng-svc-kd pod
+
+curl -k https://localhost/identitymanagement-services/v2/identity/ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573      //from  identity Id, is a  response based on personId
+
+and save the response in ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573.json
+
+Step 2:
+
+In above json
+Update -- first line "created" value to +1 day
+
+Update -- DATE_OF_BIRTH value to 25/02/2018, YEAR_OF_BIRTH value to 2018, DAY_OF_BIRTH value to 25
+
+Step 3:
+
+curl -v -k -H 'Content-Type: application/json' -X PUT -d @ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573.json https://localhost/identitymanagement-services/v2/identity
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
