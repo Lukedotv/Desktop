@@ -95,7 +95,7 @@ GET Identity response:
 
 Execute below command on ipt-idntmng-svc-kd pod
 
-curl -k https://localhost/identitymanagement-services/v2/identity/ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573      //from  identity Id, is a  response based on personId
+curl -k https://localhost/identitymanagement-services/v2/identity/ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573      //from  identity Id, is an identity  response based on personId  	curl -k	https://localhost/identitymanagement-services/v2/identity/{identityId}
 
 and save the response in ca81dc1e-b6bf-4ba0-a045-e5ac23b4d573.json
 
